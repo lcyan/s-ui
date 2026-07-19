@@ -1,21 +1,9 @@
 name: Build S-UI for Windows
 
 on:
+  # Manual only. Upstream release assets are mirrored by sync-upstream.yml;
+  # fork-side Windows builds should not run on push/tag/release events.
   workflow_dispatch:
-  release:
-    types: [published]
-  push:
-    branches:
-      - main
-    tags:
-      - "*"
-    paths:
-      - '.github/workflows/windows.yml'
-      - 'frontend/**'
-      - '**.go'
-      - 'go.mod'
-      - 'go.sum'
-      - 'windows/**'
 
 env:
   NODE_VERSION: "25"

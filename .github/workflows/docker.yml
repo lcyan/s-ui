@@ -1,8 +1,7 @@
 name: Docker Image CI
 on:
-  push:
-    tags:
-      - "*"
+  # Manual only. Upstream release assets are mirrored by sync-upstream.yml;
+  # fork-side Docker builds should not run on tag pushes.
   workflow_dispatch:
 
 jobs:
